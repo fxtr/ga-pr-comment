@@ -23,7 +23,7 @@ The PR comment URL.
 ## Example Usage
 
 ```yaml
-uses: github-actions-up-and-running/pr-comment@v1.0.0
+uses: fxtr/ga-pr-comment@master
 with:
   repo-token: ${{ secrets.GITHUB_TOKEN }}
   message: Nice PR!👍
