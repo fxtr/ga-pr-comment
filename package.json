@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "GitHub Action to comment on PR",
-  "main": "lib/main.js",
+  "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write **/*.ts",
@@ -11,11 +11,11 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm ci && npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com//github-actions-up-and-running/pr-comment.git"
+    "url": "git+https://github.com//fxtr/ga-pr-comment.git"
   },
   "keywords": [
     "actions",
@@ -24,25 +24,25 @@
   "author": "miyajan",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.0",
-    "@actions/github": "^2.1.0",
-    "@octokit/webhooks": "^7.0.0"
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "@octokit/webhooks": "^7.1.0"
   },
   "devDependencies": {
-    "@octokit/rest": "^16.43.0",
-    "@types/jest": "^24.0.23",
-    "@types/node": "^12.7.12",
-    "@typescript-eslint/parser": "^2.8.0",
-    "@zeit/ncc": "^0.20.5",
-    "eslint": "^5.16.0",
-    "eslint-plugin-github": "^2.0.0",
-    "eslint-plugin-jest": "^22.21.0",
-    "jest": "^24.9.0",
-    "jest-circus": "^24.9.0",
+    "@fixter/eslint-config-common": "^1.0.0",
+    "@octokit/rest": "^17.1.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.0",
+    "@zeit/ncc": "^0.21.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-github": "^3.4.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.1.0",
+    "jest-circus": "^25.1.0",
     "js-yaml": "^3.13.1",
-    "nock": "^11.8.2",
+    "nock": "^12.0.2",
     "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
-    "typescript": "^3.6.4"
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
   }
 }
