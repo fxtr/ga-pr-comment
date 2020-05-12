@@ -7,7 +7,10 @@ inputs:
     required: true
   message:
     description: 'Message to comment'
-    required: true
+    required: false
+  file:
+    description: 'Read comment message from file'
+    required: false
 outputs:
   comment-url:
     description: 'The PR comment URL'

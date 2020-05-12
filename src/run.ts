@@ -1,3 +1,4 @@
+import {readFileSync} from 'fs'
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import * as Webhooks from '@octokit/webhooks'
@@ -16,7 +17,17 @@ export async function run(): Promise<void> {
     // Get input parameters.
     const token = core.getInput('repo-token')
     const message = core.getInput('message')
-    core.debug(`message: ${message}`)
+    const file = core.getInput('file')
+
+    let comment = ''
+    if (message) comment = message
+    else if (file) comment = readFileSync(file, 'utf8')
+    else {
+      core.setFailed('You have to provide one of inputs `message` or `file`')
+      return
+    }
+
+    core.debug(`comment: ${comment}`)
 
     // Create a GitHub client.
     const client = new github.GitHub(token)
@@ -32,7 +43,7 @@ export async function run(): Promise<void> {
       repo,
       // eslint-disable-next-line @typescript-eslint/camelcase
       issue_number: pr.number,
-      body: message
+      body: comment
     })
     core.debug(`created comment URL: ${response.data.html_url}`)
 

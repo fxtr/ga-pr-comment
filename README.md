@@ -12,7 +12,11 @@ This action comments a message on PR.
 
 ### `message`
 
-**Required** The message to comment on PR.
+The message to comment on PR.
+
+### `file`
+
+Read comment message from file
 
 ## Outputs
 
@@ -27,4 +31,11 @@ uses: fxtr/ga-pr-comment@master
 with:
   repo-token: ${{ secrets.GITHUB_TOKEN }}
   message: Nice PR!👍
+```
+
+```yaml
+uses: fxtr/ga-pr-comment@master
+with:
+  repo-token: ${{ secrets.GITHUB_TOKEN }}
+  file: ./comment.txt
 ```

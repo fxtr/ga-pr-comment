@@ -1,3 +1,8 @@
 {
-  "extends": "@fixter/eslint-config-common"
+  "extends": "@fixter/eslint-config-common",
+  "env": {"es6": true},
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  }
 }
